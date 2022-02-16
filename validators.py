@@ -9,8 +9,6 @@ class CommaStringListValidator(BaseValidator):
         if self.dtype is not str:
             raise RequestParamError(f"{self._log_prefix} need to be string")
         data = data.split(",")
-        if len(data) == 1:
-            raise RequestParamError(f"{self._log_prefix} does not contain any of comma")
         return data
 
 
